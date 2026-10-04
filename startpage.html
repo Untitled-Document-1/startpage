@@ -7,9 +7,11 @@
     <meta content="utf-8" http-equiv="encoding">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=1" />
     <style>
-        body {background-color:#3F3F3F; color:#FFF1DD; font-family: "Times New Roman"; font-size: medium;}
+        body {background-color:#3F3F3F; color:#FFF1DD; font-family: "Times New Roman"; font-size: medium; display:flex; flex-direction:column; min-height:100vh; margin:0;}
         a {color:#FFF1DD}
-        form, hr {margin-left: 1em;}
+        /* Layout: links scroll in the main area, footer pinned to bottom */
+        .content-main {flex:1; overflow:auto; padding:0.5em 1em 0.5em 1em;}
+        .footer {flex:0; margin-left:1em; margin-right:1em;}
         input,
         input::-webkit-input-placeholder {
           font-size: 20px;
@@ -30,6 +32,7 @@
 </head>
 
 <body>
+    <main class="content-main">
     <table class="links-table">
       <tr>
         <td><a href="https://bbc.co.uk/news/">BBC News</a></td>
@@ -71,8 +74,11 @@
         <td colspan="2"><a href="https://playlists.at/youtube/search">YouTube Advanced Search</a></td>
       </tr>
     </table>
-    <hr>
-    <form action="https://www.google.co.uk/search" method="get" target="_self"> <input name="q" placeholder="Google Search" type="search"> </form>
+    </main>
+    <footer class="footer">
+      <hr>
+      <form action="https://www.google.co.uk/search" method="get" target="_self"> <input name="q" placeholder="Google Search" type="search"> </form>
+    </footer>
 </body>
 
 </html>
